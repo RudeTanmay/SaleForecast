@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walmart Sales Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Walmart Sales Prediction</h1>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="store">Store</label>
+                <input type="number" id="store" name="store" required>
+            </div>
+            <div class="form-group">
+                <label for="holiday_flag">Holiday Flag</label>
+                <select id="holiday_flag" name="holiday_flag" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="temperature">Temperature</label>
+                <input type="number" step="0.01" id="temperature" name="temperature" required>
+            </div>
+            <div class="form-group">
+                <label for="fuel_price">Fuel Price</label>
+                <input type="number" step="0.01" id="fuel_price" name="fuel_price" required>
+            </div>
+            <div class="form-group">
+                <label for="cpi">CPI</label>
+                <input type="number" step="0.01" id="cpi" name="cpi" required>
+            </div>
+            <div class="form-group">
+                <label for="unemployment">Unemployment Rate</label>
+                <input type="number" step="0.01" id="unemployment" name="unemployment" required>
+            </div>
+            <div class="form-group">
+                <label for="weekday">Weekday (0=Sunday,...)</label>
+                <input type="number" id="weekday" name="weekday" required>
+            </div>
+            <div class="form-group">
+                <label for="month">Month</label>
+                <input type="number" id="month" name="month" required>
+            </div>
+            <div class="form-group">
+                <label for="year">Year</label>
+                <input type="number" id="year" name="year" required>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
